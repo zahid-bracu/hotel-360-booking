@@ -1,0 +1,19 @@
+.h5-banner{
+    color:rgb(80, 79, 79);
+}
+.googleButton{
+    color:rgb(73, 73, 73);
+    padding: 15px 130px !important;
+    font-weight: 600;
+    box-shadow: 5px 5px 5px rgb(180, 180, 180);
+}
+
+.remove{
+    text-decoration: none !important;
+    color: black;
+}
+
+.remove:hover{
+    color:black;
+     
+}
