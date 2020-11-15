@@ -17,6 +17,7 @@ import  { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrd
 import BookedRoom from './components/BookedRoom';
 import Payment from './components/Payment';
 import PrivateRoute from './components/PrivateRoute';
+import PaymentPage from './components/PaymentPage';
 
 
 export const RoomContext = React.createContext();
@@ -60,6 +61,10 @@ function App() {
 
             <Route path="/booked">
               <BookedRoom/>
+            </Route>
+
+            <Route path="/paymentPage">
+              <PaymentPage></PaymentPage>
             </Route>
 
 
