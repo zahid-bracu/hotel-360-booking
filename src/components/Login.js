@@ -68,7 +68,7 @@ const Login = () => {
 
             <h6 className="text-danger text-center mb-3">*You must login to your personal account or gmail to complete your booking process</h6>
             <h5 className="text-center mt-2">Login</h5>
-            <Form onSubmit={submitFunc} className="mx-auto mt-2" style={{width:"400px"}}>
+            <Form onSubmit={submitFunc} className="mx-auto mt-2" style={{maxWidth:"400px"}}>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control onBlur={onChange} name="email" type="email" placeholder="Enter email" />

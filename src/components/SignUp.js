@@ -75,9 +75,9 @@ const SignUp = () => {
 
 
     return (
-        <div className="container p-5">
+        <div className="container">
             <h4 className="text-info text-center mb-4" >Register Here</h4>
-            <Form onSubmit={submitFunc} className="mx-auto d-block" style={{width:"400px"}}>
+            <Form onSubmit={submitFunc} className="mx-auto d-block" style={{maxWidth:"400px"}}>
                 <Form.Group controlId="formName">
                     <Form.Label>Enter Full Name</Form.Label>
                     <Form.Control onBlur={changeFunc} name="name" type="text" placeholder="Enter Full Name" />
