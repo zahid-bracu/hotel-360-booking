@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import './style.css';
 import {
@@ -10,6 +10,9 @@ import {
  
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0,0);
+    },[])
     const url="https://i.ibb.co/84CQx44/kisspng-hotel-manager-child-apps-hotel-illustration-hotels-5a7a4b87c57cd2-0897105415179641678089.png"
     return (
         <div className="container">
@@ -25,9 +28,10 @@ const Home = () => {
                 <img src={url} className="text-center" style={{width:"90%"}} alt=""/>
             </div>
         </div>
-        <button  className="btn btn-secondary d-block mx-auto"><Link to="/rooms">
+        <Link style={{textDecoration:"inherit"}} to="/rooms">
+        <button  className="btn btn-secondary d-block mx-auto">
             <span style={{textDecoration:"inherit",color:"white"}}>Check Our Room & Services</span>
-            </Link></button>
+             </button></Link>
         </div>
         
     );

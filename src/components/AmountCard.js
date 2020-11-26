@@ -30,7 +30,19 @@ const AmountCard = (props) => {
                 <h6>Total Room : {data.length}</h6>
                 <h6>Total Price: {sum}$</h6>
                 </CardBody>
-                <Link to="/payment"><button className="btn btn-info mx-auto d-block px-5 mb-4">Book Now !</button></Link> 
+                <Link style={{textDecoration:"inherit"}} to="/payment"><button  className="btn btn-danger mx-auto d-block px-5 my-2">Book Now !</button></Link>
+
+                <Link style={{textDecoration:"inherit"}} to="/rooms">
+                <button  className=" my-2 btn btn-info px-4 d-block mx-auto">
+                <span style={{textDecoration:"inherit",color:"white"}}>Check Our Rooms</span>
+                </button></Link>
+
+
+                <Link style={{textDecoration:"inherit"}} to="/home">
+                <button className="btn btn-dark text-white px-2 my-2 mb-3 mx-auto d-block">
+                    Go Back to Homepage
+                </button>
+                </Link>
             </Card>
         </div>
     );

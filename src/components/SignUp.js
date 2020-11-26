@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -17,6 +17,10 @@ if (!firebase.apps.length) {
 }
 const SignUp = () => {
     const [user,setUser]=useState({})
+
+    useEffect(() => {
+        window.scrollTo(0,0);
+    },[])
 
     // form functions
     function changeFunc(e){
@@ -72,6 +76,7 @@ const SignUp = () => {
 
     return (
         <div className="container p-5">
+            <h4 className="text-info text-center mb-4" >Register Here</h4>
             <Form onSubmit={submitFunc} className="mx-auto d-block" style={{width:"400px"}}>
                 <Form.Group controlId="formName">
                     <Form.Label>Enter Full Name</Form.Label>

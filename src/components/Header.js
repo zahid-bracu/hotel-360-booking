@@ -31,13 +31,20 @@ const Header = () => {
     
 
     return (
-        <Navbar  bg="light" expand="lg">
+        <Navbar  bg="light" expand="lg" sticky="top">
             <div className="container">
-                <Navbar.Brand href="#home">Hotel 360</Navbar.Brand>
+                <Navbar.Brand class="remove">
+                    <Link style={{textDecoration:"inherit"}} to="/home">
+                    <img class="d-block mx-auto" src="https://i.ibb.co/jR5LcWJ/kisspng-hotel-computer-icons-symbol-high-resolution-india-map-5b5cb6413113c7-360607041532802625201.png" style={{width:"30px"}} alt=""/>
+                    
+                    </Link>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto" style={{color:"black"}}>
-                            <Nav.Link> <Link className="remove" to="/home">Home</Link></Nav.Link>
+                            <Nav.Link> <Link className="remove" to="/home">
+                                <span class="nav-custom">Home</span>
+                            </Link></Nav.Link>
                             
                             
                             <Nav.Link><Link className="remove" to="/rooms">Rooms</Link>  </Nav.Link>
@@ -62,8 +69,8 @@ const Header = () => {
                         
                         </Nav>
                         <Nav className="ml-auto">
-                        <Nav.Link href="https://portfolio-zahid-bracu.netlify.app/" target="_blank">Portfolio</Nav.Link>
-                            <Nav.Link href="https://github.com/zahid-bracu" target="_blank">Github</Nav.Link>
+                            <Nav.Link href="https://portfolio-zahid-bracu.netlify.app/" target="_blank" className="remove">Portfolio</Nav.Link>
+                            <Nav.Link href="https://github.com/zahid-bracu" target="_blank" className="remove">Github</Nav.Link>
                         </Nav>
                      
                 </Navbar.Collapse>

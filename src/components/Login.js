@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -26,6 +26,9 @@ const Login = () => {
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/login" } };
 
+    useEffect(() => {
+        window.scrollTo(0,0);
+    },[])
     
 
 
@@ -62,6 +65,8 @@ const Login = () => {
         <>
         {
             !user.state && <div className="container">
+
+            <h6 className="text-danger text-center mb-3">*You must login to your personal account or gmail to complete your booking process</h6>
             <h5 className="text-center mt-2">Login</h5>
             <Form onSubmit={submitFunc} className="mx-auto mt-2" style={{width:"400px"}}>
             <Form.Group controlId="formBasicEmail">
@@ -97,6 +102,24 @@ const Login = () => {
             user.state && <div className="container">
                 <h3 className="text-center mt-5">Logged In Successfully</h3>
                 <Google></Google>
+
+                <Link style={{textDecoration:"inherit"}} to="/rooms">
+                <button  className=" my-2 mb-3 btn btn-info px-4 d-block mx-auto">
+                <span style={{textDecoration:"inherit",color:"white"}}>Check Our Rooms</span>
+                </button></Link>
+
+
+                <Link style={{textDecoration:"inherit"}} to="/booked">
+                <button className="btn btn-success text-white px-4 my-2 mb-3 mx-auto d-block">
+                    Current Bookings
+                </button>
+                </Link>
+
+                <Link style={{textDecoration:"inherit"}} to="/home">
+                <button className="btn btn-dark text-white px-2 my-2 mb-3 mx-auto d-block">
+                    Go Back to Homepage
+                </button>
+                </Link>
             </div>
         }
         </>

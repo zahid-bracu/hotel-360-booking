@@ -66,11 +66,11 @@ const Google = () => {
     return (
         <div>
              {
-                 user.state && <button className=" googleButton px-5 py-3 btn btn-light mx-auto d-block" onClick={()=>logout()}>Sign Out</button>
+                 user.state && <button className="  px-5  btn btn-danger mx-auto d-block" onClick={()=>logout()}>Sign Out  </button>
              }
 
 {
-                 !user.state && <button className=" googleButton px-5 py-3 btn btn-light mx-auto d-block" onClick={()=>loginGoogle()}>Sign In With Google</button>
+                 !user.state && <button className=" googleButton px-5 py-3 font-weight-bold text-white btn btn-warning mx-auto d-block" style={{textShadow:"2px 2px 5px black"}} onClick={()=>loginGoogle()}>Sign In With Google</button>
              }
             
         </div>

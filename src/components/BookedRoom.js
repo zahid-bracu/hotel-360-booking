@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect } from 'react';
 import { useState } from 'react';
 import BookedRoomCard from './BookedRoomCard';
 import  { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrder } from './databaseManager';
@@ -17,7 +17,10 @@ const BookedRoom = () => {
     const [rooms,setRoom]=useState([]);
     const [flag,setFlag]=useState(false);
 
+     
+
     useEffect(() => {
+        window.scrollTo(0,0);
         var roomsDB=getDatabaseCart();
         var keys=Object.keys(roomsDB)
         
@@ -63,22 +66,47 @@ const BookedRoom = () => {
         setRoom(finalArr);
       }
       console.log(rooms);
+
+
     return (
         <div className="container">
+            
             {
                 flag &&
                 <>
                      
 
                     <AmountCard data={rooms}></AmountCard>
+
+                    
                    
                 </>
                 
                 
             }
             {
-                !flag && <h4 className="text-center my-4 text-info">You Didn't Select Any Room</h4>
+                !flag &&
+                <>
+                <h4 className="text-center my-4 text-info">You Didn't Select Any Room</h4>
+
+
+
+                <Link style={{textDecoration:"inherit"}} to="/rooms">
+                <button  className=" my-2 btn btn-info px-4 d-block mx-auto">    
+                <span style={{textDecoration:"inherit",color:"white"}}>Check Our Rooms</span>
+                </button></Link>
+
+
+                <Link style={{textDecoration:"inherit"}} to="/home">
+                <button className="btn px-2 btn-dark mx-auto d-block">
+                    Go Back to Homepage
+                </button></Link>
+            
+                </>
             }
+
+
+            
             <div className="row">
             {
                 rooms.map(key => <BookedRoomCard remove={remove} data={key} ></BookedRoomCard>)

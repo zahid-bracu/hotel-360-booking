@@ -18,6 +18,7 @@ import BookedRoom from './components/BookedRoom';
 import Payment from './components/Payment';
 import PrivateRoute from './components/PrivateRoute';
 import PaymentPage from './components/PaymentPage';
+import Confirmed from './components/Confirmed';
 
 
 export const RoomContext = React.createContext();
@@ -59,8 +60,12 @@ function App() {
               <Payment/>
             </PrivateRoute>
 
-            <Route path="/booked">
+            <Route  path="/booked">
               <BookedRoom/>
+            </Route>
+
+            <Route path="/confirm">
+              <Confirmed/>
             </Route>
 
             <Route path="/paymentPage">
